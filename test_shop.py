@@ -44,8 +44,8 @@ def test_deallocation_increases_quantity_back():
 
 
 def test_prefer_in_stock_batches():
-    batch_in_stock = Batch('batch-001', 'DECO-TRINKET', 20, eta=date.today())
-    batch_in_shipment = Batch('batch-002', 'DECO-TRINKET', 20, eta=None)
+    batch_in_shipment = Batch('batch-001', 'DECO-TRINKET', 20, eta=date.today())
+    batch_in_stock = Batch('batch-002', 'DECO-TRINKET', 20, eta=None)
     order_line = OrderLine('ref-123456789', 'DECO-TRINKET', 2)
     result_ref = allocate(order_line, [batch_in_shipment, batch_in_stock])
     assert result_ref == 'batch-002'

@@ -24,7 +24,15 @@ class Batch:
         self._purchased_quantity = quantity
         self._allocations = set()
 
+    def __repr__(self):
+        return f'<Batch: {self.ref}>'
+
+    def __hash__(self):
+        return hash(self.ref)
+
     def __eq__(self, other):
+        if not isinstance(other, Batch):
+            return False
         return self.ref == other.ref
 
     def __gt__(self, other):
