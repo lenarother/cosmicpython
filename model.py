@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from datetime import date
-from typing import List, Optional
+from typing import List, Optional, Set
 
 
 class OutOfStock(Exception):
@@ -22,7 +22,7 @@ class Batch:
         self.sku = sku
         self.eta = eta
         self._purchased_quantity = quantity
-        self._allocations = set()
+        self._allocations = set()  # type: Set[OrderLine]
 
     def __repr__(self):
         return f'<Batch: {self.ref}>'
