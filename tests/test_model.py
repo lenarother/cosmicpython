@@ -2,8 +2,8 @@ from datetime import date
 
 import pytest
 
-from model import Batch, OrderLine, OutOfStock, allocate
-from utils import after_tomorrow, tomorrow
+from src.model import Batch, OrderLine, OutOfStock, allocate
+from src.utils import after_tomorrow, tomorrow
 
 
 def test_batch_quantity_decreases_after_allocating_an_order_line():

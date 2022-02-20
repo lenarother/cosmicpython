@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-import model
+from src import model
 
 
 class AbstractRepository(ABC):
